@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController2D controller;
     public float runSpeed = 40f;
     public Animator animator;
+    public Transform firePoint;
+    public GameObject bulletPrefab;
 
     float horizontalMove = 0f;
     bool jump = false;
@@ -40,6 +42,14 @@ public class PlayerMovement : MonoBehaviour
         {
             crouch = false;
         }
+
+        // Shooting
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Debug.Log("Got fire1 button");
+            animator.SetTrigger("Attack");
+            Shoot();
+        }
     }
 
     // Use FixedUpdate for physics stuff
@@ -58,5 +68,10 @@ public class PlayerMovement : MonoBehaviour
     public void OnCrouching(bool isCrouching)
     {
         animator.SetBool("IsCrouching", isCrouching);
+    }
+
+    void Shoot()
+    {
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
 }
