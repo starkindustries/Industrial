@@ -10,6 +10,13 @@ public class Conveyor : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        other.transform.position = Vector3.MoveTowards(other.transform.position, endpoint.position, speed * Time.deltaTime);
+        if (other.tag == "SwipeHitbox")
+        {
+            Debug.Log("Conveyor collided with swipe hitbox.");
+        }
+        else
+        {
+            other.transform.position = Vector3.MoveTowards(other.transform.position, endpoint.position, speed * Time.deltaTime);
+        }        
     }
 }
