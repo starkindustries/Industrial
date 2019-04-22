@@ -50,6 +50,13 @@ public class PlayerMovement : MonoBehaviour
             animator.SetTrigger("Attack");
             Shoot();
         }
+
+        // Swiping
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Debug.Log("Got fire2 button");
+            animator.SetTrigger("Swipe");
+        }
     }
 
     // Use FixedUpdate for physics stuff
