@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3834711339947429384}
   - component: {fileID: 3834711339947429391}
   - component: {fileID: 3834711339947429388}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SwitchLever
   m_TagString: Untagged
   m_Icon: {fileID: 0}

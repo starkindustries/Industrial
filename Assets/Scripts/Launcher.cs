@@ -7,17 +7,23 @@ public class Launcher : MonoBehaviour
     public SpriteRenderer launcherDown;
     public SpriteRenderer launcherUp;
     public float launchSpeed;
-    public bool launchPadIsDown = true;
+    public bool launcherIsDown = true;
     public float resetDelay = 1.0f;
+    private bool enabled = true;
 
     public void Start()
     {
-        UpdateLaunchPad(launchPadIsDown);
+        UpdateLaunchPad(launcherIsDown);
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if(launchPadIsDown)
+        if (!enabled)
+        {
+            return;
+        }
+
+        if(launcherIsDown)
         {
             // Launch the object upwards
             Debug.Log("Launching object tag: " + other.tag);
@@ -25,8 +31,8 @@ public class Launcher : MonoBehaviour
             // other.attachedRigidbody.AddForce(new Vector2(0f, launchSpeed));
 
             // Change the pad state to up            
-            launchPadIsDown = false;
-            UpdateLaunchPad(launchPadIsDown);
+            launcherIsDown = false;
+            UpdateLaunchPad(launcherIsDown);
             StartCoroutine("ResetLaunchPad");            
         }        
     }
@@ -40,7 +46,12 @@ public class Launcher : MonoBehaviour
     IEnumerator ResetLaunchPad()
     {
         yield return new WaitForSeconds(resetDelay);
-        launchPadIsDown = true;
-        UpdateLaunchPad(launchPadIsDown);
+        launcherIsDown = true;
+        UpdateLaunchPad(launcherIsDown);
     }    
+
+    public void Toggle()
+    {
+        enabled = !enabled;
+    }
 }
