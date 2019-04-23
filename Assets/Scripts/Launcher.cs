@@ -6,7 +6,7 @@ public class Launcher : MonoBehaviour
 {
     public SpriteRenderer launcherDown;
     public SpriteRenderer launcherUp;
-    public float launchSpeed = 1000f;
+    public float launchSpeed;
     public bool launchPadIsDown = true;
     public float resetDelay = 1.0f;
 
@@ -21,7 +21,8 @@ public class Launcher : MonoBehaviour
         {
             // Launch the object upwards
             Debug.Log("Launching object tag: " + other.tag);
-            other.attachedRigidbody.AddForce(new Vector2(0f, launchSpeed));
+            other.attachedRigidbody.velocity = new Vector2(x: other.attachedRigidbody.velocity.x, y: launchSpeed);
+            // other.attachedRigidbody.AddForce(new Vector2(0f, launchSpeed));
 
             // Change the pad state to up            
             launchPadIsDown = false;
