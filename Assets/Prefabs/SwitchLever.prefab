@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3834711339947429384}
   - component: {fileID: 3834711339947429391}
   - component: {fileID: 3834711339947429388}
-  - component: {fileID: 3834711339947429389}
   m_Layer: 0
   m_Name: SwitchLever
   m_TagString: Untagged
@@ -141,24 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 3834711339947429384}
---- !u!114 &3834711339947429389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3834711339947429387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c75bc79aa841b246b3dd819b36db635, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnExit:
+  onToggle:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
