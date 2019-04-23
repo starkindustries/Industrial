@@ -1623,6 +1623,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SwitchLever
       objectReference: {fileID: 0}
+    - target: {fileID: 3834711339947429387, guid: a93c9ef8aa12257439ac6f96b0e2e685,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 3834711339947429390, guid: a93c9ef8aa12257439ac6f96b0e2e685,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1677,6 +1682,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834711339947429385, guid: a93c9ef8aa12257439ac6f96b0e2e685,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 542032381
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834711339947429385, guid: a93c9ef8aa12257439ac6f96b0e2e685,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3834711339947429388, guid: a93c9ef8aa12257439ac6f96b0e2e685,
         type: 3}
