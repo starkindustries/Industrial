@@ -6,6 +6,7 @@ public class MachineGun : MonoBehaviour, Interactable
 {
     public GameObject bulletPrefab;
     public Transform firePoint;
+    public Animator animator;
     public bool isFiring = false;
     public float timeBetweenShots = 1.0f;
     private bool onCooldown = false;
@@ -22,6 +23,7 @@ public class MachineGun : MonoBehaviour, Interactable
         if (isFiring && !onCooldown)
         {
             Fire();
+            animator.SetTrigger("Fire");
             onCooldown = true;
             StartCoroutine("DelayBetweenShots");
         }

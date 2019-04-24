@@ -1627,6 +1627,7 @@ GameObject:
   - component: {fileID: 1880569062}
   - component: {fileID: 1880569065}
   - component: {fileID: 1880569064}
+  - component: {fileID: 1880569066}
   m_Layer: 11
   m_Name: MachineGun
   m_TagString: Untagged
@@ -1671,7 +1672,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300114, guid: 7d60519bccdb58c4fa6b7d61169cff0c, type: 3}
+  m_Sprite: {fileID: 21300118, guid: 7d60519bccdb58c4fa6b7d61169cff0c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1712,6 +1713,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5657983813671172676, guid: ee8ecc2ebe758334291dc5eac46ea019,
     type: 3}
   firePoint: {fileID: 1749138424}
+  animator: {fileID: 1880569066}
   isFiring: 0
   timeBetweenShots: 0.5
 --- !u!61 &1880569065
@@ -1740,6 +1742,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &1880569066
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880569061}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2fb0e0d4ce9a154499f9332a7d96bed7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!95 &1953592314 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5033902889886977340, guid: 7aff4a631b8e20644ae7ca2e4383c94b,
