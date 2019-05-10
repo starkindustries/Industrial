@@ -6,13 +6,14 @@ public class Conveyor : MonoBehaviour
 {
     public GameObject conveyorBelt;
     public Transform endpoint;
-    public float speed = 10f;
+    public float speed;
     public bool conveyorIsOn = true;
     private Animator animator;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        animator.SetFloat("Speed", speed);
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -37,7 +38,7 @@ public class Conveyor : MonoBehaviour
     {
         if (!conveyorIsOn)
         {
-            animator.enabled = true;
+            animator.enabled = true;            
             conveyorIsOn = true;
         }
     }
