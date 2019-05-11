@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, Damageable
 {
 
     public CharacterController2D controller;
@@ -80,5 +80,10 @@ public class PlayerMovement : MonoBehaviour
     void Shoot()
     {
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+    }
+
+    void Damageable.Damage()
+    {
+        Debug.Log("Player took damage!!");
     }
 }
