@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour, Damageable
+public class Player : MonoBehaviour, Damageable
 {
 
     public CharacterController2D controller;
@@ -23,6 +23,12 @@ public class PlayerMovement : MonoBehaviour, Damageable
     // Update is called once per frame
     void Update()
     {
+        GameManager manager = FindObjectOfType<GameManager>();
+        if(manager.IsPaused() || manager.IsGameOver())
+        {
+            return;
+        }
+
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;        
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));          // Speed is the name of the parameter in the animator object
 
@@ -85,5 +91,6 @@ public class PlayerMovement : MonoBehaviour, Damageable
     void Damageable.Damage()
     {
         Debug.Log("Player took damage!!");
+        FindObjectOfType<GameManager>().GameOver();
     }
 }
