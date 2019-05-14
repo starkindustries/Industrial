@@ -5,9 +5,12 @@ using UnityEngine;
 public class Conveyor : MonoBehaviour
 {
     public GameObject conveyorBelt;
-    public Transform endpoint;
+    public Transform leftPoint;
+    public Transform rightPoint;
+
     public float speed;
     public bool conveyorIsOn = true;
+
     private Animator animator;
 
     private void Start()
@@ -27,10 +30,16 @@ public class Conveyor : MonoBehaviour
         {
             // Ignore the swipe hitbox..
             Debug.Log("Conveyor collided with swipe hitbox.");
+            return;
         }
-        else
+
+        if (speed > 0) // Move right
         {
-            other.transform.position = Vector3.MoveTowards(other.transform.position, endpoint.position, speed * Time.deltaTime);
+            other.transform.position = Vector3.MoveTowards(other.transform.position, rightPoint.position, speed * Time.deltaTime);
+        }
+        else if (speed < 0) // Move left
+        {
+            other.transform.position = Vector3.MoveTowards(other.transform.position, leftPoint.position, Mathf.Abs(speed) * Time.deltaTime);
         }
     }
 
