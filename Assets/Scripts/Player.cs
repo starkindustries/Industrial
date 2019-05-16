@@ -30,11 +30,11 @@ public class Player : MonoBehaviour, Damageable
             return;
         }
 
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;        
-        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));          // Speed is the name of the parameter in the animator object
+        horizontalMove = PlayerInput.HorizontalAxis() * runSpeed;
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));      // Speed is the name of the parameter in the animator object
 
         // Jumping
-        if (Input.GetButtonDown("Jump"))
+        if (PlayerInput.IsPressingJump())
         {
             jump = true;
             animator.SetBool("IsJumping", true);
@@ -51,7 +51,7 @@ public class Player : MonoBehaviour, Damageable
         }
 
         // Shooting
-        if (Input.GetButtonDown("Fire1"))
+        if (PlayerInput.IsPressingShoot())
         {
             Debug.Log("Got fire1 button");
             animator.SetTrigger("Attack");
