@@ -96,6 +96,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -272,6 +273,8 @@ MonoBehaviour:
   animator: {fileID: 192448042630109247}
   firePoint: {fileID: 192448042509862954}
   bulletPrefab: {fileID: 3466535240887082467, guid: 4f3e0d5fcea615b4b912c31e4f77d4cb,
+    type: 3}
+  splatEffect: {fileID: 7246515023272277306, guid: 03571b609cb12a54cb339118beae17e5,
     type: 3}
 --- !u!1 &192448042694030549
 GameObject:

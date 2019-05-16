@@ -56,6 +56,11 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        Invoke("GameOverHelper", 0.5f);
+    }
+
+    public void GameOverHelper()
+    {
         Debug.Log("game over!");
         gameOverScreenUI.SetActive(true);
         Time.timeScale = 0f;

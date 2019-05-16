@@ -10,6 +10,7 @@ public class Player : MonoBehaviour, Damageable
     public Animator animator;
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public GameObject splatEffect;
 
     float horizontalMove = 0f;
     bool jump = false;
@@ -91,6 +92,8 @@ public class Player : MonoBehaviour, Damageable
     void Damageable.Damage()
     {
         Debug.Log("Player took damage!!");
+        Instantiate(splatEffect, transform.position, transform.rotation);
         FindObjectOfType<GameManager>().GameOver();
+        Destroy(this.gameObject);
     }
 }
